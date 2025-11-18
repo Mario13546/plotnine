@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from itertools import chain
-from typing import TYPE_CHECKING
+from typing import Optional, TYPE_CHECKING
 
 import numpy as np
 import pandas as pd
@@ -14,6 +14,7 @@ from ..iapi import range_view
 from ._expand import expand_range
 from ._runtime_typing import TransUser  # noqa: TCH001
 from .range import RangeContinuous
+from .sec_axis import secondary_axis
 from .scale_continuous import scale_continuous
 from .scale_datetime import scale_datetime
 from .scale_discrete import scale_discrete
@@ -250,6 +251,8 @@ class scale_y_continuous(scale_position_continuous):
     """
     Continuous y position
     """
+    # Optional secondary axis
+    sec_axis: Optional[secondary_axis] = None
 
     _aesthetics = [
         "y",

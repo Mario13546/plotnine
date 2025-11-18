@@ -139,6 +139,11 @@ from .scale_xy import (
     scale_y_timedelta,
 )
 
+# secondary axis scaling
+from .sec_axis import (
+    secondary_axis
+)
+
 __all__ = (
     # color
     "scale_color_brewer",
@@ -251,4 +256,6 @@ __all__ = (
     "ylim",
     "lims",
     "expand_limits",
+    # secondary axis scaling
+    "secondary_axis",
 )
